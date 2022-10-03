@@ -20,7 +20,7 @@ public class MainController extends HttpServlet {
 
     private static final String OH_SNAP = "/WEB-INF/oh-snap.jsp";
 
-    //TODO?: read these from parameter file?
+    //TODO?: read these from file?
     private static final String ACT_NAV_BLOG_HOME = "NavToBlogHome";
 //    private static final String DEST_NAV_BLOG_HOME = "/WEB-INF/home.jsp";
     private static final String DEST_NAV_BLOG_HOME = "RenderBlogHomeController";
