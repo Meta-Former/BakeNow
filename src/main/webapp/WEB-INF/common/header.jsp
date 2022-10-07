@@ -1,6 +1,6 @@
 <header>
     <div class="container">
-        <img class="col-2" src="/assets/logo.png" height="100" width="250" alt="alt"/>
+        <img class="col-2" src="/BakeNow/assets/logo.png" height="100" width="250" alt="alt"/>
         <div class="col-6 searchbox">
             <form class="mb-0" action="MainController">
                 <input type="text" name="search" placeholder="Enter a recipe ...">

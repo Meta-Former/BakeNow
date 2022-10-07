@@ -1,3 +1,15 @@
+/*### StickyFooter_START ###*/
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container {
+    flex: 1 0 auto;
+}
+/*### StickyFooter_END ###*/
+
 body{
     background-color: #F5F5F5;
     font-size: 18px;

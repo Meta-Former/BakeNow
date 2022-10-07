@@ -18,32 +18,34 @@
     </head>
     <body>
         <%@include file="/WEB-INF/common/header.jsp"%>
-        <style>
-            table, th, td {
-                border: 1px solid black;
-            }
-            th, td {
-                text-align: center;
-                padding: 5px 10px;
-            }
-        </style>
-        <table>
-            <thead>
-            <th>#</th>
-            <th>ID</th>
-            <th>Name</th>
-        </thead>
-        <tbody>
-            <c:forEach var="recipe" items="${requestScope.LIST_RECIPES}" varStatus="idx">
-                <tr>
-                    <th>${idx.count}</th>
-                    <td>${recipe.id}</td>
-                    <td>${recipe.name}</td>
-                </tr>
-            </c:forEach>
-        </tbody>
-    </table>
+        <div class="main-container">
+            <style>
+                table, th, td {
+                    border: 1px solid black;
+                }
+                th, td {
+                    text-align: center;
+                    padding: 5px 10px;
+                }
+            </style>
+            <table>
+                <thead>
+                <th>#</th>
+                <th>ID</th>
+                <th>Name</th>
+                </thead>
+                <tbody>
+                    <c:forEach var="recipe" items="${requestScope.LIST_RECIPES}" varStatus="idx">
+                        <tr>
+                            <th>${idx.count}</th>
+                            <td>${recipe.id}</td>
+                            <td>${recipe.name}</td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+        </div>
         <%@include file="/WEB-INF/common/footer.jsp"%>
         <%@include file="/WEB-INF/common/includebottom.jsp"%>
-</body>
+    </body>
 </html>

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="">
+<Context path="/BakeNow">
     <Resource
-        name="jdbc/AzureSQLDB"
         auth="Container"
-        type="javax.sql.DataSource"
         driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-        url="jdbc:sqlserver://meta-informer.database.windows.net:1433;database=BakeNow;user=srx@meta-informer;password=R41nB3f0r3Th3Dr0u9ht;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=15;"
         maxActive="100"
-    />
+        name="jdbc/AzureSQLDB"
+        type="javax.sql.DataSource"
+        url="jdbc:sqlserver://meta-informer.database.windows.net:1433;database=BakeNow;user=srx@meta-informer;password=R41nB3f0r3Th3Dr0u9ht;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=15;"/>
 </Context>
