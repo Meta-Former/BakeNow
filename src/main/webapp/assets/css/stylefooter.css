@@ -1,0 +1,9 @@
+footer{
+    background-color: #56d262;
+}
+.follow-us li, .contact-us li{
+    padding: 5px;
+}
+.follow-us li a, .contact-us li a{
+    text-decoration: none;
+}

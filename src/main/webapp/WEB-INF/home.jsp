@@ -7,16 +7,17 @@
 <%@page import="com.bakenow.core.dto.CategoryGroup"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="/WEB-INF/common/includetop.jsp"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Blog Home - BakeNow</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="css/header.css">
     </head>
     <body>
-        <button onclick="window.location.href = 'MainController?action=NavToLogin'">Login</button>
-
-
+        <%@include file="/WEB-INF/common/header.jsp"%>
         <style>
             table, th, td {
                 border: 1px solid black;
@@ -42,5 +43,7 @@
             </c:forEach>
         </tbody>
     </table>
+        <%@include file="/WEB-INF/common/footer.jsp"%>
+        <%@include file="/WEB-INF/common/includebottom.jsp"%>
 </body>
 </html>
