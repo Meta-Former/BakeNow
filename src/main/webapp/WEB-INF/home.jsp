@@ -18,7 +18,7 @@
     </head>
     <body>
         <%@include file="/WEB-INF/common/header.jsp"%>
-        <div class="main-container">
+        <div class="main-container container">
             <style>
                 table, th, td {
                     border: 1px solid black;
