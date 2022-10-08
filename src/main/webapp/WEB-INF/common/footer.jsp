@@ -8,7 +8,7 @@
 <footer class="py-3">
     <div class="container">
         <div class="col-6  justify-content-center align-items-center d-flex">
-            <span class="license d-inline-block"><a href="">BakeNow™</a> Copyright &copy; 2022. All rights reserved.<a href="">Term of Use</a>.<a href="">Privacy Policy</a>.</span>
+            <span class="license d-inline-block"><a class="trademark" href="">BakeNow™</a> Copyright &copy; 2022. All rights reserved.<a href="">Term of Use</a>.<a href="">Privacy Policy</a>.</span>
         </div>
         <div class="col-3 justify-content-center d-flex">
             <ul class="follow-us list-unstyled d-block">FOLLOW US
