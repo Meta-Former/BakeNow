@@ -7,7 +7,6 @@
                 <input type="submit" name="action" value="Search">
             </form>
         </div>
-
         <nav class=" col-2 py-2">
             <ul class="nav">
                 <li class="nav-item" width="50" height="50"><a href="#" class="bi bi-megaphone-fill"></a>
