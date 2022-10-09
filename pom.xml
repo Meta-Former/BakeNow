@@ -4,7 +4,7 @@
 
     <groupId>com.bakenow</groupId>
     <artifactId>BakeNow</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>alpha</version>
     <packaging>war</packaging>
 
     <name>BakeNow</name>

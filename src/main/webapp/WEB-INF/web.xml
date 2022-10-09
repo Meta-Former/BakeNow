@@ -8,6 +8,8 @@ cf. https://stackoverflow.com/questions/4928271/how-to-install-jstl-the-absolute
     version="5.0"
     metadata-complete = "false"
 >
+    <security-constraint>
+    </security-constraint>
     <session-config>
         <session-timeout>
             30

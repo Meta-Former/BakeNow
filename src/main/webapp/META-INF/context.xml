@@ -6,5 +6,6 @@
         maxActive="100"
         name="jdbc/AzureSQLDB"
         type="javax.sql.DataSource"
-        url="jdbc:sqlserver://meta-informer.database.windows.net:1433;database=BakeNow;user=srx@meta-informer;password=R41nB3f0r3Th3Dr0u9ht;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=15;"/>
+        url="jdbc:sqlserver://meta-archivist.database.windows.net:1433;database=BakeNow;user=srx@meta-archivist;password=R41nB3f0r3Th3Dr0u9ht;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;"
+    />
 </Context>
