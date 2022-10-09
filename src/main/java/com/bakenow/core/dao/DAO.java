@@ -17,17 +17,17 @@ public interface DAO<T> {
 
     public boolean add(T... t);
 
-    public List<T> getAll() throws Exception;
+    public List<?> getAll() throws Exception;
 
-    public Optional getById(String id);
+    public <T> Optional<?> getById(T id);
 
-    public List<T> getByParentId(String pId);
+    public List<?> getByParentId(String pId);
 
-    public List<T> getSortedByTime(Timestamp datetime);
+    public List<?> getSortedByTime(Timestamp datetime);
 //    java.util.Date date = new Date();
 //    Object param = new java.sql.Timestamp(date.getTime());
 
-    public List<T> getByStatus(int status);
+    public List<?> getByStatus(int status);
 
     public boolean update(String... cellValue);
 

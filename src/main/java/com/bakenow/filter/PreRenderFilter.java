@@ -30,8 +30,8 @@ import jakarta.servlet.http.HttpServletResponseWrapper;
  *
  * @author Admin
  */
-@WebFilter(filterName = "AuthorizationFilter", dispatcherTypes = DispatcherType.REQUEST, servletNames = {})
-public class AuthorizationFilter implements Filter {
+@WebFilter(filterName = "PreRenderFilter", urlPatterns = {"/WEB-INF/home.jsp"}, dispatcherTypes = {DispatcherType.FORWARD})
+public class PreRenderFilter implements Filter {
 
     private static final boolean debug = false;
 
@@ -40,13 +40,13 @@ public class AuthorizationFilter implements Filter {
     // configured. 
     private FilterConfig filterConfig = null;
 
-    public AuthorizationFilter() {
+    public PreRenderFilter() {
     }
 
     private void doBeforeProcessing(RequestWrapper request, ResponseWrapper response)
             throws IOException, ServletException {
         if (debug) {
-            log("AuthorizationFilter:DoBeforeProcessing");
+            log("PreRenderFilter:DoBeforeProcessing");
         }
 
         // Write code here to process the request and/or response before
@@ -83,7 +83,7 @@ public class AuthorizationFilter implements Filter {
     private void doAfterProcessing(RequestWrapper request, ResponseWrapper response)
             throws IOException, ServletException {
         if (debug) {
-            log("AuthorizationFilter:DoAfterProcessing");
+            log("PreRenderFilter:DoAfterProcessing");
         }
 
         // Write code here to process the request and/or response after
@@ -137,7 +137,7 @@ public class AuthorizationFilter implements Filter {
             throws IOException, ServletException {
 
         if (debug) {
-            log("AuthorizationFilter:doFilter()");
+            log("PreRenderFilter:doFilter()");
         }
 
         // Create wrappers for the request and response objects.
@@ -209,7 +209,7 @@ public class AuthorizationFilter implements Filter {
         this.filterConfig = filterConfig;
         if (filterConfig != null) {
             if (debug) {
-                log("AuthorizationFilter: Initializing filter");
+                log("PreRenderFilter: Initializing filter");
             }
         }
     }
@@ -220,9 +220,9 @@ public class AuthorizationFilter implements Filter {
     @Override
     public String toString() {
         if (filterConfig == null) {
-            return ("AuthorizationFilter()");
+            return ("PreRenderFilter()");
         }
-        StringBuffer sb = new StringBuffer("AuthorizationFilter(");
+        StringBuffer sb = new StringBuffer("PreRenderFilter(");
         sb.append(filterConfig);
         sb.append(")");
         return (sb.toString());
@@ -297,7 +297,7 @@ public class AuthorizationFilter implements Filter {
 
         public void setParameter(String name, String[] values) {
             if (debug) {
-                System.out.println("AuthorizationFilter::setParameter(" + name + "=" + values + ")" + " localParams = " + localParams);
+                System.out.println("PreRenderFilter::setParameter(" + name + "=" + values + ")" + " localParams = " + localParams);
             }
 
             if (localParams == null) {
@@ -317,7 +317,7 @@ public class AuthorizationFilter implements Filter {
         @Override
         public String getParameter(String name) {
             if (debug) {
-                System.out.println("AuthorizationFilter::getParameter(" + name + ") localParams = " + localParams);
+                System.out.println("PreRenderFilter::getParameter(" + name + ") localParams = " + localParams);
             }
             if (localParams == null) {
                 return getRequest().getParameter(name);
@@ -336,7 +336,7 @@ public class AuthorizationFilter implements Filter {
         @Override
         public String[] getParameterValues(String name) {
             if (debug) {
-                System.out.println("AuthorizationFilter::getParameterValues(" + name + ") localParams = " + localParams);
+                System.out.println("PreRenderFilter::getParameterValues(" + name + ") localParams = " + localParams);
             }
             if (localParams == null) {
                 return getRequest().getParameterValues(name);
@@ -347,7 +347,7 @@ public class AuthorizationFilter implements Filter {
         @Override
         public Enumeration getParameterNames() {
             if (debug) {
-                System.out.println("AuthorizationFilter::getParameterNames() localParams = " + localParams);
+                System.out.println("PreRenderFilter::getParameterNames() localParams = " + localParams);
             }
             if (localParams == null) {
                 return getRequest().getParameterNames();
@@ -358,7 +358,7 @@ public class AuthorizationFilter implements Filter {
         @Override
         public Map getParameterMap() {
             if (debug) {
-                System.out.println("AuthorizationFilter::getParameterMap() localParams = " + localParams);
+                System.out.println("PreRenderFilter::getParameterMap() localParams = " + localParams);
             }
             if (localParams == null) {
                 return getRequest().getParameterMap();

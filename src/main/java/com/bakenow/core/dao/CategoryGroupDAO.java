@@ -36,14 +36,14 @@ public class CategoryGroupDAO implements DAO<CategoryGroup> {
     @Override
     public List<CategoryGroup> getAll() throws NamingException {
         List<CategoryGroup> result = new ArrayList<>();
-        String query = "SELECT * FROM [dbo].CategoryGroup";
+        String query = "SELECT * "
+                + "FROM [dbo].CategoryGroup";
 
 //        Context initContext = new InitialContext();
 //        Context ctx = (Context) initContext.lookup("java:comp/env");
 //        DataSource dataSource = (DataSource) ctx.lookup("jdbc/AzureSQLDB");
-
-        try ( Connection conn = dataSource.getConnection();  PreparedStatement ptm = conn.prepareStatement(query)) {
-            ResultSet rs = ptm.executeQuery();
+        try ( Connection conn = dataSource.getConnection();  PreparedStatement stmt = conn.prepareStatement(query)) {
+            ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 String id = rs.getString("groupId");
                 String name = rs.getString("groupName");
@@ -58,7 +58,7 @@ public class CategoryGroupDAO implements DAO<CategoryGroup> {
     }
 
     @Override
-    public Optional getById(String string) {
+    public <Integer> Optional getById(Integer id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

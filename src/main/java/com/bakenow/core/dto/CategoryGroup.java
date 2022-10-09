@@ -9,8 +9,8 @@ package com.bakenow.core.dto;
  * @author Admin
  */
 public class CategoryGroup {
-    String id;
-    String name;
+    private String id;
+    private String name;
 
     public CategoryGroup() {
     }

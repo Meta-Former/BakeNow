@@ -17,6 +17,7 @@ body {
 }
 
 .main-container, .container {
+    position: relative;
     width: 70%;
     display: flex;
     align-content: center;

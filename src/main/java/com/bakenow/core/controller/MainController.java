@@ -27,6 +27,11 @@ public class MainController extends HttpServlet {
     private static final String ACT_NAV_LOGIN = "NavToLogin";
     private static final String DEST_NAV_LOGIN = "/WEB-INF/login.jsp";
 
+    private static final String ACT_NAV_MARKETPLACE = "NavToMarketplace";
+    private static final String DEST_NAV_MARKETPLACE = "/WEB-INF/marketplace.jsp";
+    private static final String ACT_NAV_CART = "NavToCart";
+    private static final String DEST_NAV_CART = "/WEB-INF/cart.jsp";
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -49,6 +54,13 @@ public class MainController extends HttpServlet {
                     break;
                 case ACT_NAV_LOGIN:
                     dest = DEST_NAV_LOGIN;
+                    break;
+
+                case ACT_NAV_MARKETPLACE:
+                    dest = DEST_NAV_MARKETPLACE;
+                    break;
+                case ACT_NAV_CART:
+                    dest = DEST_NAV_CART;
                     break;
                 default:
                     dest = OH_SNAP;

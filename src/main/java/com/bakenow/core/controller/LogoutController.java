@@ -4,28 +4,20 @@
  */
 package com.bakenow.core.controller;
 
-import com.bakenow.core.dao.CategoryGroupDAO;
-import com.bakenow.core.dao.DAO;
-import com.bakenow.core.dto.CategoryGroup;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
-import jakarta.annotation.Resource;
-import javax.sql.DataSource;
+import jakarta.servlet.http.HttpSession;
 
 /**
  *
  * @author Admin
  */
-@WebServlet(name = "RenderBlogHomeController", urlPatterns = {"/RenderBlogHomeController"})
-public class RenderBlogHomeController extends HttpServlet {
-
-    @Resource(name = "jdbc/AzureSQLDB")
-    private DataSource dataSource;
+@WebServlet(name = "LogoutController", urlPatterns = {"/LogoutController"})
+public class LogoutController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,9 +34,15 @@ public class RenderBlogHomeController extends HttpServlet {
         String dest = "/WEB-INF/home.jsp";
 
         try {
-            DAO dao = new CategoryGroupDAO(dataSource);
-            List<CategoryGroup> listRecipes = dao.getAll();
-            request.setAttribute("LIST_RECIPES", listRecipes);
+            String referer = request.getHeader("Referer");
+            
+            HttpSession session = request.getSession(false);
+            session.invalidate();
+
+            //Prevent Back
+            response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); //HTTP 1.1
+            response.setHeader("Pragma", "no-cache"); //HTTP 1.0
+            response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
         } catch (Exception ex) {
 //            Logger.getLogger().log();
         } finally {

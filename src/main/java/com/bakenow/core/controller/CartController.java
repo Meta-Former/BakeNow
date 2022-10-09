@@ -4,28 +4,56 @@
  */
 package com.bakenow.core.controller;
 
-import com.bakenow.core.dao.CategoryGroupDAO;
-import com.bakenow.core.dao.DAO;
-import com.bakenow.core.dto.CategoryGroup;
+import com.bakenow.core.dto.Cart;
+import com.bakenow.core.dto.Product;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
 import jakarta.annotation.Resource;
+import jakarta.servlet.http.Cookie;
+import java.util.Optional;
 import javax.sql.DataSource;
 
 /**
  *
  * @author Admin
  */
-@WebServlet(name = "RenderBlogHomeController", urlPatterns = {"/RenderBlogHomeController"})
-public class RenderBlogHomeController extends HttpServlet {
+@WebServlet(name = "CartController", urlPatterns = {"/CartController"})
+public class CartController extends HttpServlet {
 
     @Resource(name = "jdbc/AzureSQLDB")
     private DataSource dataSource;
+
+    private Cart getSessionCart(HttpServletRequest request, HttpServletResponse response) {
+        Cart cart = (Cart) request.getSession().getAttribute("SESSION_CART");
+        if (cart == null) {
+            cart = new Cart();
+        }
+
+        Cookie[] cookies = Optional.ofNullable(request.getCookies()).orElse(new Cookie[]{});
+        boolean hadSession = false;
+        for (Cookie cookie : cookies) {
+            if ("SESSION_ID".equals(cookie.getName())) {
+                hadSession = true;
+                if (!cookie.getValue().equals(request.getSession().getId())) {
+                    //Get the Cart w/ this session ID from database
+                    //cart = dao.getCart();
+                }
+                break;
+            }
+        }
+        if (!hadSession) {
+            Cookie cookie = new Cookie("SESSION_ID", request.getSession().getId());
+            cookie.setHttpOnly(true);
+            cookie.setPath(request.getContextPath());
+            response.addCookie(cookie);
+        }
+
+        return cart;
+    }
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,12 +67,18 @@ public class RenderBlogHomeController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String dest = "/WEB-INF/home.jsp";
+        String dest = "/WEB-INF/cart.jsp";
 
         try {
-            DAO dao = new CategoryGroupDAO(dataSource);
-            List<CategoryGroup> listRecipes = dao.getAll();
-            request.setAttribute("LIST_RECIPES", listRecipes);
+            int productId = Integer.parseInt(request.getParameter("productId"));
+            Product product = new Product();
+            product.setId(productId);
+            int quantity = Integer.parseInt(request.getParameter("quantity"));
+
+            Cart cart = this.getSessionCart(request, response);
+            cart.add(product, quantity);
+
+            request.getSession().setAttribute("SESSION_CART", cart);
         } catch (Exception ex) {
 //            Logger.getLogger().log();
         } finally {
