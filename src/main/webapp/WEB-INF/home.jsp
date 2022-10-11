@@ -44,10 +44,6 @@
                     </c:forEach>
                 </tbody>
             </table>
-
-            <c:url var="marketplaceLink" value="MainController?action=NavToMarketplace"/>
-            <button type="button" class="btn btn-outline-dark" style="position: absolute; top:10px; right: 10px" onclick="window.location.href = '${marketplaceLink}';">Shop HERE</button>
-
         </div>
         <%@include file="/WEB-INF/common/footer.jsp"%>
         <%@include file="/WEB-INF/common/includebottom.jsp"%>

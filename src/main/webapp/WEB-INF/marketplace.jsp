@@ -12,8 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Marketplace - BakeNow</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="assets/css/marketplace.css">
     </head>
     <body>
         <%@include file="/WEB-INF/common/header.jsp"%>

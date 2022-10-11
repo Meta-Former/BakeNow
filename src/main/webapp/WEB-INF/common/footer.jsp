@@ -5,13 +5,13 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<footer class="py-3">
-    <div class="container">
-        <div class="col-6  justify-content-center align-items-center d-flex">
-            <span class="license d-inline-block"><a class="trademark" href="">BakeNow™</a> Copyright &copy; 2022. All rights reserved.<a href="">Term of Use</a>.<a href="">Privacy Policy</a>.</span>
+<footer class="py-2">
+    <div class="d-flex" style="width:1440px; margin:0 auto;">
+        <div class="col-6 d-flex justify-content-left align-items-center d-inline-block">
+            <span class="d-inline-block"><a href="${pageScope.ToHome}" style="text-decoration:none;">BakeNow™</a> Copyright &copy; 2022. All rights reserved.<a href="">Term of Use</a>.<a href="">Privacy Policy</a>.</span>
         </div>
-        <div class="col-3 justify-content-center d-flex">
-            <ul class="follow-us list-unstyled d-block">FOLLOW US
+        <div class="col-3 d-flex justify-content-center">
+            <ul class="contact-info list-unstyled d-block">FOLLOW US
                 <li class="py-1">
                     <a href="#" aria-label="Facebook">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +63,7 @@
                 </li>
             </ul>
         </div>
-        <ul class="contact-us col-3 justify-content-center list-unstyled d-block">CONTACT US
+        <ul class="contact-info col-3 justify-content-center list-unstyled d-block">CONTACT US
             <li class="py-1">
                 <a href="#" aria-label="Email">
                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,7 +81,7 @@
                         </defs>
                     </svg>
 
-                    <a href="mailto:bakenow@gmail.com">bakenow@gmail.com</a>
+                    <a href="mailto:bakenow@gmail.com"> &nbsp;Gmail</a>
                 </a>
             </li>
             <li class="py-1">
@@ -90,7 +90,7 @@
                         <path d="M24 13H22C21.9992 12.2046 21.6829 11.442 21.1204 10.8796C20.558 10.3171 19.7954 10.0008 19 10V8C20.3256 8.00159 21.5964 8.52888 22.5338 9.46622C23.4711 10.4036 23.9984 11.6744 24 13Z" fill="#3171F6"/>
                         <path d="M27.9991 13H25.9991C25.9969 11.1441 25.2588 9.36489 23.9465 8.05259C22.6342 6.7403 20.8549 6.00212 18.9991 6V4C21.3852 4.00265 23.6728 4.95171 25.3601 6.63896C27.0474 8.32622 27.9964 10.6139 27.9991 13ZM25.9991 29H25.8291C6.17906 27.87 3.38906 11.29 2.99906 6.23C2.93811 5.43675 3.19474 4.65177 3.71252 4.04772C4.2303 3.44368 4.96681 3.07004 5.76006 3.009C5.83939 3.003 5.91906 3 5.99906 3H11.2691C11.6696 2.99961 12.0611 3.11951 12.3927 3.34416C12.7243 3.56881 12.9809 3.88787 13.1291 4.26L14.6491 8C14.7954 8.36355 14.8317 8.76208 14.7535 9.14609C14.6753 9.5301 14.486 9.88267 14.2091 10.16L12.0791 12.31C12.4104 14.2013 13.3154 15.945 14.6714 17.3045C16.0273 18.664 17.7686 19.5737 19.6591 19.91L21.8291 17.76C22.1106 17.4862 22.4664 17.3013 22.8523 17.2283C23.2382 17.1554 23.6371 17.1977 23.9991 17.35L27.7691 18.86C28.1356 19.0129 28.4483 19.2714 28.6673 19.6027C28.8864 19.9339 29.0019 20.3229 28.9991 20.72V26C28.9991 26.7956 28.683 27.5587 28.1204 28.1213C27.5578 28.6839 26.7947 29 25.9991 29ZM5.99906 5C5.86774 4.99961 5.73762 5.02508 5.61615 5.07497C5.49467 5.12486 5.38421 5.19819 5.29107 5.29077C5.19793 5.38335 5.12394 5.49337 5.07333 5.61455C5.02271 5.73572 4.99645 5.86568 4.99606 5.997C4.99606 6.025 4.99706 6.05267 4.99906 6.08C5.45906 12 8.40906 26 25.9391 27C26.2037 27.0159 26.4639 26.926 26.6623 26.7501C26.8607 26.5742 26.9811 26.3267 26.9971 26.062L26.9991 26V20.72L23.2291 19.21L20.3591 22.06L19.8791 22C11.1791 20.91 9.99906 12.21 9.99906 12.12L9.93906 11.64L12.7791 8.77L11.2791 5H5.99906Z" fill="#4285F4"/>
                     </svg>
-                    <a href="tel:+84 909 999 999">+84 909 999 999</a>
+                    <a href="tel:+84 909 999 999">Phone</a>
 
                 </a>
             </li>
