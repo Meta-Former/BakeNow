@@ -1,18 +1,17 @@
 footer{
     background-color: #56d262;
 }
-.follow-us li, .contact-us li{
+.contact-info li{
     padding: 5px;
 }
-.follow-us li a, .contact-us li a{
+.contact-info li a{
     text-decoration: none;
 }
-.trademark{
-    text-decoration: none;
-}
+
 ul{
     font-weight: bolder;
 }
 ul li{
     font-weight: normal;
 }
+
