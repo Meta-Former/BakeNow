@@ -30,7 +30,7 @@ public class MainController extends HttpServlet {
     private static final String ACT_NAV_MARKETPLACE = "NavToMarketplace";
     private static final String DEST_NAV_MARKETPLACE = "/WEB-INF/marketplace.jsp";
     private static final String ACT_NAV_CART = "NavToCart";
-    private static final String DEST_NAV_CART = "/WEB-INF/cart.jsp";
+    private static final String DEST_NAV_CART = "/WEB-INF/marketplace/cart.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

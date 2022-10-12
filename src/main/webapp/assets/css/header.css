@@ -2,13 +2,18 @@ header{
     background-color: #56d262
 }
 
-nav a{
+.nav_icon{
     margin: 10px;
     padding: 5px;
     border-radius: 100px;
+    border: 1px solid #bfa3a3;
     background-color: #f5f5f5;
 }
 
 header a, header a:visited{
     color: #000;
+}
+
+button:hover{
+    background-color: red !important;
 }

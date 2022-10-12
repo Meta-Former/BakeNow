@@ -15,20 +15,21 @@
         <title>Blog Home - BakeNow</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
         <link rel="stylesheet" href="css/header.css">
+        
     </head>
     <body>
         <%@include file="/WEB-INF/common/header.jsp"%>
-        <div class="main-container container">
-            <style>
-                table, th, td {
-                    border: 1px solid black;
-                }
-                th, td {
-                    text-align: center;
-                    padding: 5px 10px;
-                }
-            </style>
-            <table>
+                <div class="main-container container">
+                    <style>
+                        table, th, td {
+                            border: 1px solid black;
+                        }
+                        th, td {
+                            text-align: center;
+                            padding: 5px 10px;
+                        }
+                    </style>
+                    <table>
                 <thead>
                 <th>#</th>
                 <th>ID</th>
@@ -44,7 +45,7 @@
                     </c:forEach>
                 </tbody>
             </table>
-        </div>
+                </div>
         <%@include file="/WEB-INF/common/footer.jsp"%>
         <%@include file="/WEB-INF/common/includebottom.jsp"%>
     </body>
