@@ -12,6 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login - BakeNow</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <!--KHÔNG HIỆN GOOGLE LOGIN VÌ THIẾU CÁI LINK NHA MỌI NGƯỜI-->
         <link rel="stylesheet" href="css/header.css">
     </head>
     <body>

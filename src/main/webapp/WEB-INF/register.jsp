@@ -16,6 +16,7 @@
     </head>
     <body>
         <%@include file="/WEB-INF/common/header.jsp"%>
+        <div class="main-container container">
         <div class="loginform_container" style="height:650px ;">
             <h1>Sign Up</h1>
             <form method="post" class="login_form">
@@ -50,6 +51,7 @@
                     Already have an account? <a href="#">Sign in</a>
                 </div>
             </form>
+        </div>
         </div>
         <%@include file="/WEB-INF/common/footer.jsp"%>
         <%@include file="/WEB-INF/common/includebottom.jsp"%>
