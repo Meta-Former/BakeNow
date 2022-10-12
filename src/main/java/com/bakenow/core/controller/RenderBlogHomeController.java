@@ -42,9 +42,9 @@ public class RenderBlogHomeController extends HttpServlet {
         String dest = "/WEB-INF/home.jsp";
 
         try {
-            DAO dao = new CategoryGroupDAO(dataSource);
-            List<CategoryGroup> listRecipes = dao.getAll();
-            request.setAttribute("LIST_RECIPES", listRecipes);
+//            DAO dao = new CategoryGroupDAO(dataSource);
+//            List<CategoryGroup> listRecipes = dao.getAll();
+//            request.setAttribute("LIST_RECIPES", listRecipes);
         } catch (Exception ex) {
 //            Logger.getLogger().log();
         } finally {
