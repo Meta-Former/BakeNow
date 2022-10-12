@@ -17,7 +17,29 @@
     <body>
         <%@include file="/WEB-INF/common/header.jsp"%>
         <div class="main-container container">
-            <h1>Sign in NOW!!!</h1>
+            <div class="loginform_container">
+            <h1>Sign In</h1>
+            <form method="post" class="login_form">
+                <div class="text_feild">
+                    <label for="usernameInput">User name</label>
+                    <input id="usernameInput" type="text">
+                </div>
+                <div class="text_feild">
+                    <label for="usernameInput">Password</label>
+                    <input id="passwordInput" type="password">
+                </div>
+                <div class="forgotPassword_link">
+                    <a href="#">Forgot password?</a>
+                </div>
+                <div class="button-28">
+                    <input type="submit" value="Login">
+                </div>
+                <div id="my_signin2" class="g-signin2" data-onsuccess="onSignIn"></div>
+                <div class="register_link">
+                    Don't have an account? <a href="#">Register</a>
+                </div>
+            </form>
+        </div>
         </div>
         <%@include file="/WEB-INF/common/footer.jsp"%>
         <%@include file="/WEB-INF/common/includebottom.jsp"%>
