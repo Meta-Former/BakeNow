@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Edit Recipe - BakeNow</title>
+        <title>Edit A Recipe - BakeNow</title>
         <link rel="stylesheet" href="assets/css/edit-recipe.css">
     </head>
     <body>

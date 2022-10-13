@@ -11,8 +11,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Create Recipe - BakeNow</title>
         <link rel="stylesheet" href="assets/css/create-recipe.css">
+        <title>Create a New Recipe - BakeNow</title>
     </head>
     <body>
         <%@include file="/WEB-INF/common/header.jsp"%>

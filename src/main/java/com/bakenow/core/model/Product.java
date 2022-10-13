@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.bakenow.core.dto;
+package com.bakenow.core.model;
 
 import java.sql.Timestamp;
+import java.util.Objects;
 
 /**
  *
@@ -15,8 +16,8 @@ public class Product {
     private Integer id;
     private Integer categoryId;
     private Integer shopId;
-    private Timestamp creationTime;
-    private Timestamp approvalTime;
+    private Timestamp createTime;
+    private Timestamp approveTime;
     private String name;
     private String description;
     private Double price;
@@ -25,15 +26,19 @@ public class Product {
     private Boolean available;
     private Byte statusId;
 
-    public Product() {
+    private Product() {
+    }
+    
+    public Product(Integer id) {
+        this.id = id;
     }
 
     public Product(Integer id, Integer categoryId, Integer shopId, Timestamp creationTime, Timestamp approvalTime, String name, String description, Double price, Integer stock, Double rating, Boolean available, Byte statusId) {
         this.id = id;
         this.categoryId = categoryId;
         this.shopId = shopId;
-        this.creationTime = creationTime;
-        this.approvalTime = approvalTime;
+        this.createTime = creationTime;
+        this.approveTime = approvalTime;
         this.name = name;
         this.description = description;
         this.price = price;
@@ -42,6 +47,22 @@ public class Product {
         this.available = available;
         this.statusId = statusId;
     }
+    
+    public static Product aProduct() {
+        return new Product();
+    }
+    
+    public Product withId(Integer id) {
+        this.id = id;
+        return this;
+    }
+    
+    public Product withPrice(Double price) {
+        this.price = price;
+        return this;
+    }
+        
+    //TODO: Finish Builder pattern
 
     public Integer getId() {
         return id;
@@ -68,19 +89,19 @@ public class Product {
     }
 
     public Timestamp getCreationTime() {
-        return creationTime;
+        return createTime;
     }
 
     public void setCreationTime(Timestamp creationTime) {
-        this.creationTime = creationTime;
+        this.createTime = creationTime;
     }
 
     public Timestamp getApprovalTime() {
-        return approvalTime;
+        return approveTime;
     }
 
     public void setApprovalTime(Timestamp approvalTime) {
-        this.approvalTime = approvalTime;
+        this.approveTime = approvalTime;
     }
 
     public String getName() {
@@ -137,6 +158,26 @@ public class Product {
 
     public void setStatusId(Byte statusId) {
         this.statusId = statusId;
+    }
+
+    /**
+     *
+     * @param that
+     * @return
+     */
+    @Override
+    public boolean equals(Object that) {
+        if (that == this) return true;
+        if (!(that instanceof Product)) return false;
+        Product p = (Product) that;
+        return Objects.equals(p.id, this.id);
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + Objects.hashCode(this.id);
+        return hash;
     }
 
 }

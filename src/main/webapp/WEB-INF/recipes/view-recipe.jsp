@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@include file="/WEB-INF/common/includetop.jsp"%>
+<%@include file="/WEB-INF/common/shared.jsp"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,7 +18,7 @@
         <%@include file="/WEB-INF/common/header.jsp"%>
         <c:url var="ToProfile" value="MainController?action=NavToProfile"/>
         <c:url var="ToEditRecipe" value="MainController?action=NavToEditRecipe"/>
-        <div class="main-container py-3">
+        <div id="page_view-recipe" class="main-container py-3">
             <div class="row">
                 <div class="recipe_info col-7"">
                     <div class="recipe_info_container">
@@ -60,7 +60,7 @@
 
                         <div class="recipe_instruction">
                             <c:forEach begin="1" end="5${requestScope.RECIPE.instruction.size()}">
-                                <span style="font-size: 20px;">Bước 1: Trộn bột vỏ bánh</span>
+                                <span style="font-size: 20px; font-weight: bold">Bước 1</span>
                                 <p style="text-align: justify;">
                                     Thêm 40g bột yến mạch vào tô hỗn hợp chất lỏng, trộn đều đến khi không còn bột khô.
                                     Tiếp tục thêm 160g bột mì nguyên cám vào tô, trộn đều đến khi không còn bột khô rồi đậy màng bọc thực phẩm, cho bột nghỉ khoảng 5 phút.
@@ -131,7 +131,7 @@
 
                         <form class="p-2 mb-0" action="">
                             <div class="p-1"> 
-                                <input type="text" style="height: 150px; vertical-align: text-top; border: 1px solid #D9D9D9;" class="col-12" name="commentContent" placeholder="Share your thought...">
+                                <textarea type="text" style="height: 150px; vertical-align: text-top; border: 1px solid #D9D9D9;" class="col-12" name="commentContent" placeholder="Share your thought..."></textarea>
                             </div>
                             <div class="my-2 d-flex justify-content-end">
                                 <input type="submit" class="px-2 recipe_comment_add_button" style="width: 100px;" name="action" value="Post">

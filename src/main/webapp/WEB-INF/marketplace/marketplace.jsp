@@ -6,7 +6,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="/WEB-INF/common/includetop.jsp"%>
+<%@include file="/WEB-INF/common/shared.jsp"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -34,6 +34,5 @@
             </c:forEach>
         </div>
         <%@include file="/WEB-INF/common/footer.jsp"%>
-        <%@include file="/WEB-INF/common/includebottom.jsp"%>
     </body>
 </html>
