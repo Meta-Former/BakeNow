@@ -20,7 +20,7 @@
     </head>
     <body>
         <%@include file="/WEB-INF/common/header.jsp"%>
-
+        <c:url var="ToViewRecipe" value="MainController?action=NavToViewRecipe"/>
         <div class="main-container container">
 
             <!--recipes-->
@@ -39,7 +39,7 @@
             <div class="recipe">
                 <img src="assets/img/img_10.png" alt="img_1">
                 <div class="recipe_body">
-                    <h5 class="recipe_title">Banh Cupcake Nho Kho</h5>
+                    <a href="${pageScope.ToViewRecipe}"<h5 class="recipe_title">Banh Cupcake Nho Kho</h5><a>
                     <p class="recipe_text">By: <a href="#">Peter Parking</a></p><br>
                     <div class="recipe_more">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

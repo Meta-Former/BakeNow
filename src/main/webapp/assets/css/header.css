@@ -10,10 +10,29 @@ header{
     background-color: #f5f5f5;
 }
 
+.nav_icon:hover{
+    background-color: #D9D9D9;
+}
+
 header a, header a:visited{
     color: #000;
 }
 
-button:hover{
-    background-color: red !important;
+button.subheader:hover{
+    background-color: #F4C82B !important;
+    color: #000 !important;
+}
+
+button.subheader{
+    width: 330px !important;
+    height: 80px !important;
+    background-color:#D9D9D9 !important;
+    font-size: 30px !important;
+    font-weight:bold !important;
+}
+
+input{
+    height: 45px;
+    border: 1px solid #bfa3a3; 
+    border-radius:5px;
 }

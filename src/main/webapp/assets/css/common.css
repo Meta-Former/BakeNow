@@ -5,10 +5,10 @@ body {
     flex-direction: column;
 }
 
-.main-container {
+/*.main-container {
     flex: 1 0 auto;
     width: 1440px;
-}
+}*/
 /*### StickyFooter_END ###*/
 
 body {
@@ -17,11 +17,10 @@ body {
     font-family: Roboto;
 }
 
-.main-container, .container {
+.main-container {
     position: relative;
-    width: 1277px;
-    /*display: flex;*/
-    align-content: center;
+    width: 1440px;
+    margin: 0 auto;
 }
 /* CSS */
 

@@ -28,6 +28,8 @@ public class MainController extends HttpServlet {
     private static final String DEST_NAV_LOGIN = "/WEB-INF/login.jsp";
     private static final String ACT_NAV_REGISTER = "NavToRegister";
     private static final String DEST_NAV_REGISTER = "/WEB-INF/register.jsp";
+    private static final String ACT_NAV_VIEW_RECIPE = "NavToViewRecipe";
+    private static final String DEST_NAV_VIEW_RECIPE = "/WEB-INF/recipes/view-recipe.jsp";
     
     private static final String ACT_NAV_MARKETPLACE = "NavToMarketplace";
     private static final String DEST_NAV_MARKETPLACE = "/WEB-INF/marketplace.jsp";
@@ -59,6 +61,9 @@ public class MainController extends HttpServlet {
                     break;
                 case ACT_NAV_REGISTER:
                     dest = DEST_NAV_REGISTER;
+                    break;
+                case ACT_NAV_VIEW_RECIPE:
+                    dest = DEST_NAV_VIEW_RECIPE;
                     break;
 
                 case ACT_NAV_MARKETPLACE:
