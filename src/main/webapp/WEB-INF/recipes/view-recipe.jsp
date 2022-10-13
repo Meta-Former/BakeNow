@@ -114,7 +114,7 @@
 
                         <form class="p-2 mb-0" action="">
                             <div class="p-1"> 
-                                <input type="text" style="height: 150px; vertical-align: text-top; border: 1px solid #D9D9D9;" class="col-12" name="commentContent" placeholder="Share your thought...">
+                                <textarea type="text" style="height: 150px; vertical-align: text-top; border: 1px solid #D9D9D9;" class="col-12" name="commentContent" placeholder="Share your thought..."></textarea>
                             </div>
                             <div class="my-2 d-flex justify-content-end">
                                 <input type="submit" class="px-2 recipe_comment_add_button" style="width: 100px;" name="action" value="Post">
