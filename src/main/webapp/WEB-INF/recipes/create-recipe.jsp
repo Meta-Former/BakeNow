@@ -41,8 +41,10 @@
                             <div class="py-2" > 
                                 <div style="font-size: 24px; font-weight: bold;">Instruction</div>
                             </div>
-                            <div class="create_recipe_form_step">
-                                <div style="font-size: 20px; padding-left: 10px">Step 1</div>
+                            <div class="recipe_create_form_step">
+                                <div style="font-size: 20px; padding-left: 10px">
+                                    <span class="recipe_create_form_step_counter">Step 1</span>
+                                </div>
                                 <textarea class="my-2 py-2" type="text" style=" padding-left: 10px; width: 100%; height: 150px;" name="title" placeholder="Write an instruction..." required=""></textarea>
                             </div>
                             <div id="add_step" class="my-2 supply_add_button">+ Add</div>
@@ -98,22 +100,30 @@
         </div>
         <%@include file="/WEB-INF/common/footer.jsp"%>
         <!--<script src="assets/js/create-recipe.js"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <c:set var="stepCount" value="1"></c:set>
         <script>
-            document.getElementById("add_step").onclick = function () {
-                //                var step = document.createElement('div');
-                //                step.setAttribute("style", "font-size: 20px; padding-left: 10px");
-                //                step.innerHTML = 'Step 2';
-                //                var content = document.createElement('textarea');
-                //                content.setAttribute("class", "my-2 py-2");
-                //                content.setAttribute("type", "text");
-                //                content.setAttribute("style", "padding-left: 10px; width: 100%; height: 150px;");
-                //                content.setAttribute("name", "step_content");
-                //                content.setAttribute("placeholder", "Write an instruction...");
-                //                content.setAttribute("required", "");
-                //                step.appendChild(content);
-                //
-                //                document.getElementById()("add_step").appendChild(step);
-                document.getElementsByTagName(body)[0].style.backgroundColor = "red";
+            document.getElementById("add_step").onclick = () => {
+                var step = document.createElement('div');
+                step.setAttribute("class", "recipe_create_form_step");
+                step.setAttribute("style", "font-size: 20px; padding-left: 10px; padding: 0;");
+                var counter = document.createElement('span');
+                counter.setAttribute("class", "recipe_create_form_step_counter");
+                step.appendChild(counter);
+                var content = document.createElement('textarea');
+                content.setAttribute("class", "my-2 py-2");
+                content.setAttribute("type", "text");
+                content.setAttribute("style", "padding-left: 10px; width: 100%; height: 150px;");
+                content.setAttribute("name", "step_content");
+                content.setAttribute("placeholder", "Write an instruction...");
+                content.setAttribute("required", "");
+                step.appendChild(content);
+                document.getElementById("add_step").previousElementSibling.insertAdjacentElement('afterend', step);
+
+                $('.recipe_create_form_step_counter').each((index, el) => {
+//                        $(el).css("background-color", "red");
+                    $(el).text('Step ' + (index + 1));
+                });
             };
         </script>
     </body>
