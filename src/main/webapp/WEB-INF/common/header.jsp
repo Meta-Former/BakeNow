@@ -12,8 +12,8 @@
             </a>
             <div class="col-6 py-2 d-flex justify-content-center align-items-center">
                 <form class="mb-0" action="MainController">
-                    <input type="text" class="py-1" style="width: 550px; padding-left:10px;" name="search" placeholder="Enter a recipe ...">
-                    <input type="submit" class="py-1" name="action" value="Search" >
+                    <input type="text" class="py-1 recipe_search" style="width: 550px; padding-left:10px;" name="search" placeholder="Enter a recipe ...">
+                    <input type="submit" class="py-1 recipe_search" name="action" value="Search" >
                 </form>
             </div>
             <nav class="col-2 py-2 d-flex justify-content-space-around align-items-center">

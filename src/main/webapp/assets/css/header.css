@@ -31,7 +31,7 @@ button.subheader{
     font-weight:bold !important;
 }
 
-input{
+input.recipe_search{
     height: 45px;
     border: 1px solid #bfa3a3; 
     border-radius:5px;

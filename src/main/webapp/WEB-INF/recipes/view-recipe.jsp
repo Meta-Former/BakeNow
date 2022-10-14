@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Marketplace - BakeNow</title>
+        <title>View Recipe - BakeNow</title>
         <link rel="stylesheet" href="assets/css/view-recipe.css">
     </head>
     <body>
@@ -43,7 +43,7 @@
 
                         <div class="recipe_instruction">
                             <c:forEach begin="1" end="5${requestScope.RECIPE.instruction.size()}">
-                                <span style="font-size: 20px;">Bước 1: Trộn bột vỏ bánh</span>
+                                <span style="font-size: 20px; font-weight: bold">Bước 1</span>
                                 <p style="text-align: justify;">
                                     Thêm 40g bột yến mạch vào tô hỗn hợp chất lỏng, trộn đều đến khi không còn bột khô.
                                     Tiếp tục thêm 160g bột mì nguyên cám vào tô, trộn đều đến khi không còn bột khô rồi đậy màng bọc thực phẩm, cho bột nghỉ khoảng 5 phút.
