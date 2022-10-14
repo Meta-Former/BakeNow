@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Marketplace - BakeNow</title>
+        <title>View Recipe - BakeNow</title>
         <link rel="stylesheet" href="assets/css/view-recipe.css">
     </head>
     <body>
