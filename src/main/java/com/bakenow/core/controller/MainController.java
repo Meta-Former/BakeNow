@@ -22,17 +22,17 @@ public class MainController extends HttpServlet {
 
     //TODO?: read these from file?
     private static final String ACT_NAV_BLOG_HOME = "NavToBlogHome";
-//    private static final String DEST_NAV_BLOG_HOME = "/WEB-INF/home.jsp";
     private static final String DEST_NAV_BLOG_HOME = "RenderBlogHomeController";
     private static final String ACT_NAV_LOGIN = "NavToLogin";
     private static final String DEST_NAV_LOGIN = "/WEB-INF/login.jsp";
     private static final String ACT_NAV_REGISTER = "NavToRegister";
     private static final String DEST_NAV_REGISTER = "/WEB-INF/register.jsp";
+
     private static final String ACT_NAV_VIEW_RECIPE = "NavToViewRecipe";
     private static final String DEST_NAV_VIEW_RECIPE = "/WEB-INF/recipes/view-recipe.jsp";
     private static final String ACT_NAV_CREATE_RECIPE = "NavToCreateRecipe";
     private static final String DEST_NAV_CREATE_RECIPE = "/WEB-INF/recipes/create-recipe.jsp";
-    
+
     private static final String ACT_NAV_MARKETPLACE = "NavToMarketplace";
     private static final String DEST_NAV_MARKETPLACE = "/WEB-INF/marketplace.jsp";
     private static final String ACT_NAV_CART = "NavToCart";
@@ -54,33 +54,28 @@ public class MainController extends HttpServlet {
 
         try {
             String action = request.getParameter("action");
-            switch (action) {
-                case ACT_NAV_BLOG_HOME:
-                    dest = DEST_NAV_BLOG_HOME;
-                    break;
-                case ACT_NAV_LOGIN:
-                    dest = DEST_NAV_LOGIN;
-                    break;
-                case ACT_NAV_REGISTER:
-                    dest = DEST_NAV_REGISTER;
-                    break;
-                case ACT_NAV_VIEW_RECIPE:
-                    dest = DEST_NAV_VIEW_RECIPE;
-                    break;
-                case ACT_NAV_CREATE_RECIPE:
-                    dest = DEST_NAV_CREATE_RECIPE;
-                    break;
 
-                case ACT_NAV_MARKETPLACE:
-                    dest = DEST_NAV_MARKETPLACE;
-                    break;
-                case ACT_NAV_CART:
-                    dest = DEST_NAV_CART;
-                    break;
-                default:
-                    dest = OH_SNAP;
+            dest = switch (action) {
+                case ACT_NAV_BLOG_HOME ->
+                    DEST_NAV_BLOG_HOME;
+                case ACT_NAV_LOGIN ->
+                    DEST_NAV_LOGIN;
+                case ACT_NAV_REGISTER ->
+                    DEST_NAV_REGISTER;
+
+                case ACT_NAV_VIEW_RECIPE ->
+                    DEST_NAV_VIEW_RECIPE;
+                case ACT_NAV_CREATE_RECIPE ->
+                    DEST_NAV_CREATE_RECIPE;
+
+                case ACT_NAV_MARKETPLACE ->
+                    DEST_NAV_MARKETPLACE;
+                case ACT_NAV_CART ->
+                    DEST_NAV_CART;
+                default ->
+                    OH_SNAP;
                 //TODO: config error handler pages (e.g. 404)
-            }
+            };
         } catch (Exception ex) {
 //            Logger.getLogger().log();
         } finally {
