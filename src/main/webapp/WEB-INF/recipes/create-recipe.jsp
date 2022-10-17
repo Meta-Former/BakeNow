@@ -41,12 +41,14 @@
                             <div class="py-2" > 
                                 <div style="font-size: 24px; font-weight: bold;">Instruction</div>
                             </div>
+                             <c:forEach var="m" begin="1" end="3">
                             <div class="recipe_create_form_step">
                                 <div style="font-size: 20px; padding-left: 10px">
-                                    <span class="recipe_create_form_step_counter">Step 1</span>
+                                    <span class="recipe_create_form_step_counter">Step ${m}</span>
                                 </div>
                                 <textarea class="my-2 py-2" type="text" style=" padding-left: 10px; width: 100%; height: 150px;" name="title" placeholder="Write an instruction..." required=""></textarea>
                             </div>
+                             </c:forEach>
                             <div id="add_step" class="my-2 supply_add_button">+ Add</div>
                             <div class="d-flex">
                                 <div class="create_recipe_form_supply_ingredient col-7 my-4">
@@ -54,12 +56,12 @@
                                     <div class="p-2 my-2" style="border: 1px solid #D9D9D9; border-radius: 5px;">
                                         <div class="d-flex">
                                             <div class="col-7 mx-1 d-flex justify-content-center" style="font-size: 20px;">Name</div>
-                                            <div class="col-3 mx-1 d-flex justify-content-center" style="font-size: 20px;">Quantity</div>
+                                            <div class="col-3 mx-1 d-flex justify-content-center" style="font-size: 20px;">Amount</div>
                                             <div class="col-2"></div>
                                         </div>
-                                        <div class="d-flex">
+                                        <div class="d-flex ingredient-row">
                                             <input type="text" class="supply col-7 mx-1" style="padding-left: 10px;" name="ingredientName" placeholder="Ingredient name..." required="">
-                                            <input type="text" class="supply col-3 mx-1" style="padding-left: 10px;" name="ingredientQuantity" placeholder="..." required="">
+                                            <input type="text" class="supply col-3 mx-1" style="padding-left: 10px;" name="ingredientAmount" placeholder="..." required="">
                                             <a class="col-2 d-flex justify-content-center align-items-center"><svg width="30" height="30" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <g opacity="0.35">
                                                 <path d="M21 38.4375C16.1266 38.4375 11.4529 36.5477 8.00691 33.1837C4.56093 29.8198 2.625 25.2573 2.625 20.5C2.625 15.7427 4.56093 11.1802 8.00691 7.81627C11.4529 4.45234 16.1266 2.5625 21 2.5625C25.8734 2.5625 30.5471 4.45234 33.9931 7.81627C37.4391 11.1802 39.375 15.7427 39.375 20.5C39.375 25.2573 37.4391 29.8198 33.9931 33.1837C30.5471 36.5477 25.8734 38.4375 21 38.4375ZM21 41C26.5695 41 31.911 38.8402 35.8492 34.9957C39.7875 31.1512 42 25.9369 42 20.5C42 15.0631 39.7875 9.84881 35.8492 6.00431C31.911 2.15982 26.5695 0 21 0C15.4305 0 10.089 2.15982 6.15076 6.00431C2.21249 9.84881 0 15.0631 0 20.5C0 25.9369 2.21249 31.1512 6.15076 34.9957C10.089 38.8402 15.4305 41 21 41Z" fill="black"/>
@@ -68,7 +70,7 @@
                                                 </svg>
                                             </a>
                                         </div>
-                                        <div class="mx-1 my-2 supply_add_button">+ Add</div>
+                                        <div id="add_ingredient" class="mx-1 my-2 supply_add_button">+ Add</div>
                                     </div>
                                 </div>
                                 <div class="create_recipe_form_supply_tool col-5 my-4 mx-2">
@@ -85,7 +87,7 @@
                                                 </svg>
                                             </a>
                                         </div>
-                                        <div class="mx-1 my-2 supply_add_button">+ Add</div>
+                                        <div id="add_tool" class="mx-1 my-2 supply_add_button">+ Add</div>
                                     </div>
                                 </div>
                             </div>
@@ -124,6 +126,33 @@
 //                        $(el).css("background-color", "red");
                     $(el).text('Step ' + (index + 1));
                 });
+            };
+            
+            document.getElementById("add_ingredient").onclick = () => {
+                var ingredient = document.createElement('input');
+                ingredient.setAttribute("type","text");
+                ingredient.setAttribute("class","supply col-7 mx-1");
+                ingredient.setAttribute("style","padding-left: 10px;");
+                ingredient.setAttribute("name","ingredientName");
+                ingredient.setAttribute("required","");
+                ingredient.setAttribute("placeholder","Ingredient name...");
+                var amount = document.createElement('input');
+                amount.setAttribute("type","text");
+                amount.setAttribute("class","supply col-3 mx-1");
+                amount.setAttribute("style","padding-left: 10px;");
+                amount.setAttribute("name","ingredientAmount");
+                amount.setAttribute("required","");
+                amount.setAttribute("placeholder","...");
+                var removeButton = document.createElement('a');
+                removeButton.setAttribute("class","col-2 d-flex justify-content-center align-items-center");
+                var svg = document.createElement('svg');
+                svg.setAttribute("width","30");
+                svg.setAttribute("height","30");
+                svg.setAttribute("viewBox","0 0 42 41");
+                svg.setAttribute("fill","none");
+                svg.setAttribute("xmlns","http://www.w3.org/2000/svg");
+                var 
+                
             };
         </script>
     </body>

@@ -17,6 +17,7 @@
     <body>
         <%@include file="/WEB-INF/common/header.jsp"%>
         <c:url var="ToProfile" value="MainController?action=NavToProfile"/>
+        <c:url var="ToEditRecipe" value="MainController?action=NavToEditRecipe"/>
         <div class="main-container py-3">
             <div class="row">
                 <div class="recipe_info col-7"">
@@ -30,8 +31,24 @@
                             <span class="fa fa-star fa-star-sized"></span>
                             <span class="recipe_text"  style="margin-top: 0px; padding-left: 0px; padding-right: 0px;">(25)</span>
                         </div>
-                        <div class="recipe_author">
+                        <div class="recipe_author d-inline-block" style="width: 75%">
                             By:<a href="${pageScope.ToProfile}">${requestScope.RECIPE.authorName}DuyBuiVu</a> 
+                        </div>
+                        <div class="recipe_action  d-inline-block" style="width: 20%; text-align: end;">
+                            <div id="recipe_action_icon" >
+                                <svg width="6" height="22" viewBox="0 0 6 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="3" cy="11" r="3" fill="black"/>
+                                <circle cx="3" cy="19" r="3" fill="black"/>
+                                <circle cx="3" cy="3" r="3" fill="black"/>
+                                </svg>
+                            </div>
+                            <div id="recipe_action_option" style="position: absolute; top:140px; left: 700px; width: 90px; display: none;">
+                                <ul style="list-style-type: none; text-align: center; padding: 5px;">
+                                    <li><a href="${pageScope.ToEditRecipe}">Edit</a></li>
+                                    <li><a href="">Hide</a></li>
+                                    <li><a href="">Delete</a></li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="recipe_img py-2 d-flex justify-content-center">
                             <image src="assets/img/img_10.png" alt="recipe images" style="width: 256px; height: 256px;">
@@ -128,5 +145,12 @@
         </div>
         <%@include file="/WEB-INF/common/footer.jsp"%>
         <%@include file="/WEB-INF/common/includebottom.jsp"%>
+        <script>
+            
+            document.getElementById("recipe_action_icon").onclick = () => {
+                var option = document.getElementById("recipe_action_option");
+                 option.setAttribute("display","block");
+            };
+        </script>
     </body>
 </html>
