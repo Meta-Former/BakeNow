@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@include file="/WEB-INF/common/includetop.jsp"%>
+<%@include file="/WEB-INF/common/shared.jsp"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -120,7 +120,7 @@
                 content.setAttribute("placeholder", "Write an instruction...");
                 content.setAttribute("required", "");
                 step.appendChild(content);
-                document.getElementById("add_step").previousElementSibling.insertAdjacentElement('afterend', step);
+                document.getElementById("add_step").insertAdjacentElement('beforebegin', step);
 
                 $('.recipe_create_form_step_counter').each((index, el) => {
 //                        $(el).css("background-color", "red");
@@ -151,7 +151,21 @@
                 svg.setAttribute("viewBox","0 0 42 41");
                 svg.setAttribute("fill","none");
                 svg.setAttribute("xmlns","http://www.w3.org/2000/svg");
-                var 
+                var g = document.createElement('g');
+                g.setAttribute("opacity","0.35");
+                var path = document.createElement(path);
+                path.setAttribute("d","M21 38.4375C16.1266 38.4375 11.4529 36.5477 8.00691 33.1837C4.56093 29.8198 2.625 25.2573 2.625 20.5C2.625 15.7427 4.56093 11.1802 8.00691 7.81627C11.4529 4.45234 16.1266 2.5625 21 2.5625C25.8734 2.5625 30.5471 4.45234 33.9931 7.81627C37.4391 11.1802 39.375 15.7427 39.375 20.5C39.375 25.2573 37.4391 29.8198 33.9931 33.1837C30.5471 36.5477 25.8734 38.4375 21 38.4375ZM21 41C26.5695 41 31.911 38.8402 35.8492 34.9957C39.7875 31.1512 42 25.9369 42 20.5C42 15.0631 39.7875 9.84881 35.8492 6.00431C31.911 2.15982 26.5695 0 21 0C15.4305 0 10.089 2.15982 6.15076 6.00431C2.21249 9.84881 0 15.0631 0 20.5C0 25.9369 2.21249 31.1512 6.15076 34.9957C10.089 38.8402 15.4305 41 21 41Z");
+                path.setAttribute("fill","black");
+                var rect = document.createElement(rect);
+                rect.setAttribute("x","11");
+                rect.setAttribute("y","20");
+                rect.setAttribute("width","20");
+                rect.setAttribute("height","2.5");
+                rect.setAttribute("rx","1.25");
+                rect.setAttribute("fill","black");
+                
+                removeButton.appendChild(svg.appendChild(g.appendChild(path,rect)));
+                
                 
             };
         </script>

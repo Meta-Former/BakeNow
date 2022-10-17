@@ -11,13 +11,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>View Recipe - BakeNow</title>
+        <title>View A Recipe - BakeNow</title>
         <link rel="stylesheet" href="assets/css/view-recipe.css">
     </head>
     <body>
         <%@include file="/WEB-INF/common/header.jsp"%>
-        <c:url var="ToProfile" value="MainController?action=NavToProfile"/>
-        <c:url var="ToEditRecipe" value="MainController?action=NavToEditRecipe"/>
+        <c:url var="toProfile" value="MainController?action=NavToProfile"/>
+        <c:url var="toEditRecipe" value="MainController?action=NavToEditRecipe"/>
         <div id="page_view-recipe" class="main-container py-3">
             <div class="row">
                 <div class="recipe_info col-7"">
@@ -31,20 +31,19 @@
                             <span class="fa fa-star fa-star-sized"></span>
                             <span class="recipe_text"  style="margin-top: 0px; padding-left: 0px; padding-right: 0px;">(25)</span>
                         </div>
-                        <div class="recipe_author d-inline-block" style="width: 75%">
-                            By:<a href="${pageScope.ToProfile}">${requestScope.RECIPE.authorName}DuyBuiVu</a> 
+                        <div class="recipe_author d-inline-block" style="width: 75%; text-align: left;">
+                            By:<a href="${pageScope.toProfile}">${requestScope.RECIPE.authorName}DuyBuiVu</a> 
                         </div>
-                        <div class="recipe_action  d-inline-block" style="width: 20%; text-align: end;">
-                            <div id="recipe_action_icon" >
-                                <svg width="6" height="22" viewBox="0 0 6 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="3" cy="11" r="3" fill="black"/>
-                                <circle cx="3" cy="19" r="3" fill="black"/>
-                                <circle cx="3" cy="3" r="3" fill="black"/>
-                                </svg>
-                            </div>
-                            <div id="recipe_action_option" style="position: absolute; top:140px; left: 700px; width: 90px; display: none;">
+                        <div class="recipe_action d-inline-block" style="width: 20%; text-align: end;">
+                            <svg id="recipe_action_icon" width="6" height="22" viewBox="0 0 6 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="3" cy="11" r="3" fill="black"/>
+                            <circle cx="3" cy="19" r="3" fill="black"/>
+                            <circle cx="3" cy="3" r="3" fill="black"/>
+                            </svg>
+
+                            <div id="recipe_action_option" style="position: absolute; top: 140px; left: 700px; width: 90px; display: none;">
                                 <ul style="list-style-type: none; text-align: center; padding: 5px;">
-                                    <li><a href="${pageScope.ToEditRecipe}">Edit</a></li>
+                                    <li><a href="${pageScope.toEditRecipe}">Edit</a></li>
                                     <li><a href="">Hide</a></li>
                                     <li><a href="">Delete</a></li>
                                 </ul>
@@ -59,8 +58,10 @@
                         </div>
 
                         <div class="recipe_instruction">
+
+                            <div style="font-size: 24px; font-weight: bold; margin: 10px 0;">Instruction</div>
                             <c:forEach begin="1" end="5${requestScope.RECIPE.instruction.size()}">
-                                <span style="font-size: 20px; font-weight: bold">Bước 1</span>
+                                <div style="font-size: 20px; font-weight: bold; padding: 10px;">Bước 1</div>
                                 <p style="text-align: justify;">
                                     Thêm 40g bột yến mạch vào tô hỗn hợp chất lỏng, trộn đều đến khi không còn bột khô.
                                     Tiếp tục thêm 160g bột mì nguyên cám vào tô, trộn đều đến khi không còn bột khô rồi đậy màng bọc thực phẩm, cho bột nghỉ khoảng 5 phút.
@@ -78,7 +79,7 @@
                             <span class="py-2" style="font-size: 24px; font-weight: bold;">Ingredients</span>
                             <ul class="py-1 px-2 list-unstyled">
                                 <c:forEach begin="1" end="5">
-                                    <li class="recipe_supply_title d-flex py-1 px-1">
+                                    <li class="recipe_supply_item d-flex py-1 px-1">
                                         <div class="col-9">Whipping Cream</div>
                                         <div class="col-3">200ml</div>
                                     </li>
@@ -89,7 +90,7 @@
                             <span class="py-2" style="font-size: 24px; font-weight: bold;">Tools</span>
                             <ul class="py-1 px-2 list-unstyled">
                                 <c:forEach begin="1" end="5">
-                                    <li class="recipe_supply_title py-1 px-1">Máy đánh trứng</li>
+                                    <li class="recipe_supply_item py-1 px-1">Máy đánh trứng</li>
                                     </c:forEach>
                             </ul>
                         </div>
@@ -134,7 +135,7 @@
                                 <textarea type="text" style="height: 150px; vertical-align: text-top; border: 1px solid #D9D9D9;" class="col-12" name="commentContent" placeholder="Share your thought..."></textarea>
                             </div>
                             <div class="my-2 d-flex justify-content-end">
-                                <input type="submit" class="px-2 recipe_comment_add_button" style="width: 100px;" name="action" value="Post">
+                                <input type="submit" class="px-2 recipe_comment_add_button" style="width: 100px; height: 45px;" name="action" value="Post">
                             </div>
                         </form>
 
@@ -144,12 +145,14 @@
             </div>
         </div>
         <%@include file="/WEB-INF/common/footer.jsp"%>
-        <%@include file="/WEB-INF/common/includebottom.jsp"%>
         <script>
-            
             document.getElementById("recipe_action_icon").onclick = () => {
-                var option = document.getElementById("recipe_action_option");
-                 option.setAttribute("display","block");
+                if (document.getElementById("recipe_action_option").style.display === "block") {
+                    document.getElementById("recipe_action_option").style.display = "none";
+                } else if (document.getElementById("recipe_action_option").style.display === "none") {
+                    document.getElementById("recipe_action_option").style.display = "block";
+                }
+
             };
         </script>
     </body>

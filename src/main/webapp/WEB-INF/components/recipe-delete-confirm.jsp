@@ -5,6 +5,6 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<<div class="modal">
+<div class="modal">
     <h1>Delete recipe. CAN'T GO BACK! Sure?</h1>
 </div>

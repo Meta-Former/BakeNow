@@ -42,6 +42,10 @@ public class MainController extends HttpServlet {
     
     private static final String ACT_NAV_MARKETPLACE = "NavToMarketplace";
     private static final String DEST_NAV_MARKETPLACE = "/WEB-INF/marketplace.jsp";
+    private static final String ACT_NAV_VIEW_PRODUCT = "NavToViewProduct";
+    private static final String DEST_NAV_VIEW_PRODUCT = "/WEB-INF/marketplace/view-product.jsp";
+    private static final String ACT_ADD_TO_CART = "AddToCart";
+    private static final String DEST_ADD_TO_CART = "AddToCartController";
     private static final String ACT_NAV_CART = "NavToCart";
     private static final String DEST_NAV_CART = "/WEB-INF/marketplace/cart.jsp";
 
@@ -84,6 +88,10 @@ public class MainController extends HttpServlet {
 
                 case ACT_NAV_MARKETPLACE ->
                     DEST_NAV_MARKETPLACE;
+                case ACT_NAV_VIEW_PRODUCT ->
+                    DEST_NAV_VIEW_PRODUCT;
+                case ACT_ADD_TO_CART ->
+                    DEST_ADD_TO_CART;
                 case ACT_NAV_CART ->
                     DEST_NAV_CART;
                 default ->
