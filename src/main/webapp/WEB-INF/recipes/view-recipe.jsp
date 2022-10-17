@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@include file="/WEB-INF/common/includetop.jsp"%>
+<%@include file="/WEB-INF/common/shared.jsp"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,7 +17,7 @@
     <body>
         <%@include file="/WEB-INF/common/header.jsp"%>
         <c:url var="ToProfile" value="MainController?action=NavToProfile"/>
-        <div class="main-container py-3">
+        <div id="page_view-recipe" class="main-container py-3">
             <div class="row">
                 <div class="recipe_info col-7"">
                     <div class="recipe_info_container">
@@ -127,6 +127,5 @@
             </div>
         </div>
         <%@include file="/WEB-INF/common/footer.jsp"%>
-        <%@include file="/WEB-INF/common/includebottom.jsp"%>
     </body>
 </html>

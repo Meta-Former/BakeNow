@@ -18,7 +18,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(name = "MainController", urlPatterns = {"/MainController"})
 public class MainController extends HttpServlet {
 
-    private static final String OH_SNAP = "/WEB-INF/oh-snap.jsp";
+    private static final String ERROR_404 = "/WEB-INF/errorpages/error404.jsp";
 
     //TODO?: read these from file?
     private static final String ACT_NAV_BLOG_HOME = "NavToBlogHome";
@@ -27,6 +27,11 @@ public class MainController extends HttpServlet {
     private static final String DEST_NAV_LOGIN = "/WEB-INF/login.jsp";
     private static final String ACT_NAV_REGISTER = "NavToRegister";
     private static final String DEST_NAV_REGISTER = "/WEB-INF/register.jsp";
+    private static final String ACT_NAV_FORGOT_PWD = "NavToForgotPassword";
+    private static final String DEST_NAV_FORGOT_PWD = "/WEB-INF/forgot-password.jsp";
+
+    private static final String ACT_NAV_PROFILE = "NavToProfile";
+    private static final String DEST_NAV_PROFILE = "/WEB-INF/profile/profile.jsp";
 
     private static final String ACT_NAV_VIEW_RECIPE = "NavToViewRecipe";
     private static final String DEST_NAV_VIEW_RECIPE = "/WEB-INF/recipes/view-recipe.jsp";
@@ -50,7 +55,7 @@ public class MainController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String dest = OH_SNAP;
+        String dest = ERROR_404;
 
         try {
             String action = request.getParameter("action");
@@ -62,6 +67,11 @@ public class MainController extends HttpServlet {
                     DEST_NAV_LOGIN;
                 case ACT_NAV_REGISTER ->
                     DEST_NAV_REGISTER;
+                case ACT_NAV_FORGOT_PWD ->
+                    DEST_NAV_FORGOT_PWD;
+
+                case ACT_NAV_PROFILE ->
+                    DEST_NAV_PROFILE;
 
                 case ACT_NAV_VIEW_RECIPE ->
                     DEST_NAV_VIEW_RECIPE;
@@ -73,8 +83,7 @@ public class MainController extends HttpServlet {
                 case ACT_NAV_CART ->
                     DEST_NAV_CART;
                 default ->
-                    OH_SNAP;
-                //TODO: config error handler pages (e.g. 404)
+                    ERROR_404;
             };
         } catch (Exception ex) {
 //            Logger.getLogger().log();

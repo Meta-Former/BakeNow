@@ -4,9 +4,13 @@
  */
 package com.bakenow.core.dao;
 
-import com.bakenow.core.dto.Cart;
-import com.bakenow.core.dto.CartItem;
-import com.bakenow.core.dto.Product;
+import static com.bakenow.core.model.Cart.*;
+import static com.bakenow.core.model.CartItem.*;
+import static com.bakenow.core.model.Product.*;
+
+import com.bakenow.core.model.Cart;
+import com.bakenow.core.model.CartItem;
+import com.bakenow.core.model.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,9 +18,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
-import java.util.concurrent.ConcurrentHashMap;
 import javax.sql.DataSource;
 
 /**
@@ -63,7 +65,7 @@ public class CartDAO implements DAO<Cart> {
                     String sessionId = rs.getString("sessionId");
                     String useId = rs.getString("useId");
                     double total = rs.getDouble("total");
-                    cart = new Cart(new HashMap<Integer, CartItem>(), sessionId, useId, total);
+                    cart = aCart().withCartItems(new HashMap<Integer, CartItem>()).withSessionId(sessionId).withUserId(useId).withTotal(total);
                 }
             }
             if (cart != null) {
@@ -73,7 +75,7 @@ public class CartDAO implements DAO<Cart> {
                     while (rs.next()) {
                         String productId = rs.getString("productId");
                         //Product's attr'es here
-                        Product product = new Product();
+                        Product product = aProduct();
                         CartItem cartItem = new CartItem(product, cartId);
                         cart.add(cartItem);
                     }

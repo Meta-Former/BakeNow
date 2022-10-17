@@ -4,7 +4,7 @@
  */
 package com.bakenow.core.dao;
 
-import com.bakenow.core.dto.CategoryGroup;
+import com.bakenow.core.model.CategoryGroup;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

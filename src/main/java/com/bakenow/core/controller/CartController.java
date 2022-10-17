@@ -4,8 +4,11 @@
  */
 package com.bakenow.core.controller;
 
-import com.bakenow.core.dto.Cart;
-import com.bakenow.core.dto.Product;
+import static com.bakenow.core.model.Cart.*;
+import static com.bakenow.core.model.Product.*;
+
+import com.bakenow.core.model.Cart;
+import com.bakenow.core.model.Product;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -30,7 +33,7 @@ public class CartController extends HttpServlet {
     private Cart getSessionCart(HttpServletRequest request, HttpServletResponse response) {
         Cart cart = (Cart) request.getSession().getAttribute("SESSION_CART");
         if (cart == null) {
-            cart = new Cart();
+            cart = aCart();
         }
 
         Cookie[] cookies = Optional.ofNullable(request.getCookies()).orElse(new Cookie[]{});
@@ -39,7 +42,7 @@ public class CartController extends HttpServlet {
             if ("SESSION_ID".equals(cookie.getName())) {
                 hadSession = true;
                 if (!cookie.getValue().equals(request.getSession().getId())) {
-                    //Get the Cart w/ this session ID from database
+                    //TODO: Get the Cart w/ this session ID from database
                     //cart = dao.getCart();
                 }
                 break;
@@ -71,7 +74,7 @@ public class CartController extends HttpServlet {
 
         try {
             int productId = Integer.parseInt(request.getParameter("productId"));
-            Product product = new Product();
+            Product product = aProduct();
             product.setId(productId);
             int quantity = Integer.parseInt(request.getParameter("quantity"));
 

@@ -4,16 +4,12 @@
  */
 package com.bakenow.core.controller;
 
-import com.bakenow.core.dao.CategoryGroupDAO;
-import com.bakenow.core.dao.DAO;
-import com.bakenow.core.dto.CategoryGroup;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
 import jakarta.annotation.Resource;
 import javax.sql.DataSource;
 
@@ -39,7 +35,7 @@ public class RenderBlogHomeController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String dest = "/WEB-INF/home.jsp";
+        String dest = "/WEB-INF/recipes/home.jsp";
 
         try {
 //            DAO dao = new CategoryGroupDAO(dataSource);

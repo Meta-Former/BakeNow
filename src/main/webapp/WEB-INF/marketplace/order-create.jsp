@@ -1,7 +1,7 @@
 <%-- 
-    Document   : listOfVisibleRecipes
-    Created on : Oct 12, 2022, 12:47:13 PM
-    Author     : tlminh
+    Document   : order-create
+    Created on : 17 Oct 2022, 12:44:46
+    Author     : Admin
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,9 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Checkout</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Enter shipping info</h1>
     </body>
 </html>

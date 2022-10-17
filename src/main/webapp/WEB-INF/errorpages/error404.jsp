@@ -4,14 +4,13 @@
     Author     : Admin
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="/WEB-INF/common/includetop.jsp"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" isErrorPage="true"%>
+<%@include file="/WEB-INF/common/shared.jsp"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>404 Not Found</title>
-        <link rel="stylesheet" href="css/header.css">
     </head>
     <body>
         <%@include file="/WEB-INF/common/header.jsp"%>
@@ -25,6 +24,5 @@
             JSP Version: <%= JspFactory.getDefaultFactory().getEngineInfo().getSpecificationVersion() %> <br>-->
         </div>
         <%@include file="/WEB-INF/common/footer.jsp"%>
-        <%@include file="/WEB-INF/common/includebottom.jsp"%>
     </body>
 </html>

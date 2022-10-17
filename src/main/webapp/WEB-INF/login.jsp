@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="/WEB-INF/common/includetop.jsp"%>
+<%@include file="/WEB-INF/common/shared.jsp"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,11 +13,11 @@
         <title>Login - BakeNow</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
         <!--KHÔNG HIỆN GOOGLE LOGIN VÌ THIẾU CÁI LINK NHA MỌI NGƯỜI-->
-        <link rel="stylesheet" href="css/header.css">
     </head>
     <body>
         <%@include file="/WEB-INF/common/header.jsp"%>
-        <div class="main-container container">
+        <c:url var="ToForgotPassword" value="MainController?action=NavToForgotPassword"></c:url>
+        <div id="page_login" class="main-container container">
             <div class="loginform_container">
             <h1>Sign In</h1>
             <form method="post" class="login_form">
@@ -30,7 +30,7 @@
                     <input id="passwordInput" type="password">
                 </div>
                 <div class="forgotPassword_link">
-                    <a href="#">Forgot password?</a>
+                    <a href="${ToForgotPassword}">Forgot password?</a>
                 </div>
                 <div class="button-28">
                     <input type="submit" value="Login">
@@ -43,6 +43,5 @@
         </div>
         </div>
         <%@include file="/WEB-INF/common/footer.jsp"%>
-        <%@include file="/WEB-INF/common/includebottom.jsp"%>
     </body>
 </html>
