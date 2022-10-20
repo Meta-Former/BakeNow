@@ -114,10 +114,6 @@
                                     <div class="col-6">Bơ</div>
                                 </li>
                                 <li class="product_details_item d-flex py-1 px-1">
-                                    <div class="col-6">Weight</div>
-                                    <div class="col-6">200gr</div>
-                                </li>
-                                <li class="product_details_item d-flex py-1 px-1">
                                     <div class="col-6">Manufacturing Date</div>
                                     <div class="col-6">2020-12-24</div>
                                 </li>

@@ -6,7 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/common/shared.jsp"%>
-
 <link rel="stylesheet" href="assets/css/recipe-rate.css"/>
 <body class="d-flex justify-content-center align-items-center">
     <div class="rating-form">

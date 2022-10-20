@@ -1,3 +1,14 @@
+.create_recipe_page_title{
+    font-size: 40px; 
+    font-weight: bold; 
+    word-spacing: 0.15em; 
+    width: 550px; color: #5F6440; 
+    border-bottom: 4px solid #56D262; 
+    margin: 0 auto; 
+    text-align: center;
+}
+
+
 .create_recipe_form input,
 form textarea,
 .supply{
@@ -30,7 +41,7 @@ form textarea,
     font-size: 24px;
     border: 1px solid #56D262 !important; 
     color: #56D262;
-    border-radius: 5px;
+    border-radius: 15px !important;
     text-decoration: none;
     text-align: center;
 }

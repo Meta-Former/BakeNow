@@ -19,7 +19,7 @@
         <div class="main-container py-3">
             <div class="create_recipe_container d-flex justify-content-center">
                 <div class="create_recipe col-10">
-                    <div class="col-10" style="font-size: 40px; font-weight: 600; letter-spacing: 0.15em; width: 350px; color: #5F6440; border-bottom: 4px solid #56D262">
+                    <div class="col-10 edit_recipe_page_title">
                         EDIT RECIPE
                     </div>
                     <div class="d-flex justify-content-center my-3 py-3" style="background-color: #fff;">

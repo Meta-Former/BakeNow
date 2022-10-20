@@ -26,6 +26,10 @@
          <!-- Trang view-product / Hàng xài tạm vì chưa có trang marketplace -->
         <c:url var="toViewProduct" value="MainController?action=NavToViewProduct"/>
         <a href="${pageScope.toViewProduct}">View Product</a>
+         <!-- Trang add-product / Hàng xài tạm vì chưa có trang marketplace -->
+        <c:url var="toAddProduct" value="MainController?action=NavToAddProduct"/>
+        <a href="${pageScope.toAddProduct}">Add Product</a>
+        
         
             <div class="page_title">
                 <h1>RECENT RECIPES</h1>
