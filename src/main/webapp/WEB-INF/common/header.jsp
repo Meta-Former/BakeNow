@@ -11,12 +11,12 @@
     <div style="width:1440px; margin:0 auto;">
         <div class="row" style="height: 120px;">
 
-            <!<!-- BRAND LOGO -->
+            <!-- BRAND LOGO -->
             <a href="${pageScope.toHome}" aria-label="home" class="col-2 d-flex justify-content-left align-items-center">
                 <img src="${pageContext.request.contextPath}/assets/img/logo.png" height="100" width="250" alt="BakeNow logo"/>
             </a>
 
-            <!<!-- SEARCH BAR -->
+            <!-- SEARCH BAR -->
             <div class="col-6 py-2 d-flex justify-content-center align-items-center">
                 <form class="mb-0" action="MainController">
                     <input type="text" class="py-1 recipe_search" style="width: 550px; padding-left:10px;" name="search" placeholder="Enter a recipe ...">
@@ -24,7 +24,7 @@
                 </form>
             </div>
 
-            <!<!-- NAV ICONS-->
+            <!-- NAV ICONS-->
             <nav class="col-2 py-2 d-flex justify-content-space-around align-items-center">
                 <a class="nav_icon" data-bs-toggle="dropdown" aria-expanded="false">
                     <img  src="assets/img/announcement_icon.png" alt="announcement icon" />
@@ -45,7 +45,7 @@
                     </c:if>
             </nav>
 
-            <!<!-- ROLE ACTION -->
+            <!-- ROLE ACTION -->
             <div class="col-2 d-flex justify-content-left align-items-center">
                 <div class="py-1 px-2 d-flex" style="border: 1px solid #D9D9D9; border-radius: 5px; background-color: #f5f5f5;">
                     <a class="px-2" href="${pageScope.toLogin}">Login</a> |

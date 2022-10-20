@@ -36,6 +36,8 @@ public class MainController extends HttpServlet {
     private static final String ACT_NAV_VIEW_RECIPE = "NavToViewRecipe";
     private static final String DEST_NAV_VIEW_RECIPE = "/WEB-INF/recipes/view-recipe.jsp";
     private static final String ACT_NAV_CREATE_RECIPE = "NavToCreateRecipe";
+    private static final String DEST_NAV_RATE_RECIPE = "/WEB-INF/components/recipe-rate.jsp";
+    private static final String ACT_NAV_RATE_RECIPE = "NavToRateRecipe";
     private static final String DEST_NAV_CREATE_RECIPE = "/WEB-INF/recipes/create-recipe.jsp";
     private static final String ACT_NAV_EDIT_RECIPE = "NavToEditRecipe";
     private static final String DEST_NAV_EDIT_RECIPE = "/WEB-INF/recipes/edit-recipe.jsp";
@@ -81,6 +83,8 @@ public class MainController extends HttpServlet {
 
                 case ACT_NAV_VIEW_RECIPE ->
                     DEST_NAV_VIEW_RECIPE;
+                case ACT_NAV_RATE_RECIPE ->
+                    DEST_NAV_RATE_RECIPE;
                 case ACT_NAV_CREATE_RECIPE ->
                     DEST_NAV_CREATE_RECIPE;
                 case ACT_NAV_EDIT_RECIPE ->
