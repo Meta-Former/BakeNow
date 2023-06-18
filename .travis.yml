@@ -3,5 +3,23 @@ branches:
   only:
   - master
   - coverity_scan
-
 jdk: openjdk17
+env:
+  global:
+    secure: CW+fv0PVz0oANkbvcjgdUIIrsel7odpdXoE9aaFPm3FH1ZVcmx05yBd3nJI37KKmMYUSnhQRe2+TlCRGWvr3sahURcb4zs4NOXry2Bjb41Fz9vfOcBp3dXGWUH6ml1UXpx/iIuwff/srTfblewZjKczk3QUoysAwWgTcL91t23bemnJ48rkB40KYBNg/0OhvGQti2Kg2v44Pgu3HT0FSViGgApbxYI+TbxkCAkZihwDmWD1Ah25fvaqDg0wBVzPmstjZUxrdOOE0XIIbHVSAdhRyARJJOKlAoMADKcZ7UGy6dGQdlIGCYgKQEgFhojy/FKbLrHD/xuXv0Yp4kVYlUb2pNnp66ey3gLIdXH1vbC4dsrdR3lh6Ni4rF9VwuZIPB9WoYEZi1S7Ofh0iwe/fGgBB3ZXfGqgprQk4tap21c/gE4CELfbjIqVE20aMtxzHkeAaQnkkBtu5v6zV+LOFZAt+cF9u1BXw1rA7hNFUy/ysAN1miTGBTFM9wE6t32HaoBHn+gyjzCx+24D6QoC565pzTirL+K9b8UW7GnKYtAqPTZ5tIIMyvslNjmGtJHYPNkisKbZA1+ehjILwjlz6aYHPUGNeXCMz3kQUelYPVfuikfILDNMduCZwI7rc4iLDp+a1pjJUMiN2N5s1GBw2RDU3SRhHtKyKWxz4xZfcc5I=
+
+addons:
+  coverity_scan:
+
+    project:
+      name: slug-kit/BakeNow
+      version: 0.1
+      description: Bake! Now!!!
+
+    notification_email: SeraphUltimateX@gmail.com
+
+    build_command_prepend: mvn clean
+
+    build_command: mvn package
+
+    branch_pattern: coverity_scan
