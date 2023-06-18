@@ -1,5 +1,8 @@
 language: java
+os: windows
 branches:
   only:
   - master
   - coverity_scan
+
+jdk: openjdk17
